@@ -1,0 +1,285 @@
+body {background-color: #22252b;}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto 30%;
+    gap: 0px;
+    background-color: white;
+    padding: 0px;
+  }
+  
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 0px 0;
+    font-size: 0px;
+  }
+
+#seadragon-viewer {
+  width: 100%;
+  height: 900px;
+  border-color:black;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#seadragon-viewer2 {
+  width: 100%;
+  height: 900px;
+  border-color:black;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#alignment {
+  width: 100%;
+  height: 900px;
+  border-color:black;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#controls {
+  width: 100%;
+  height: 900px;
+  border-color:black;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.btn-primary{
+  width: 100%;
+  background-color: #545b69;
+  border-color:black;
+  border-width: 1px;
+
+}
+
+.btn-primary:hover{
+  background-color: #22252b;
+  border-color: black;
+  border-width: 1px;
+}
+
+/* Header/Logo Title */
+.header {
+  padding: 0px;
+  height: 10%;
+  text-align: center;
+  background: #22252b;
+  color: white;
+  font-size: 30px;
+}
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 0px;
+  background-color: white;
+  padding: 0px;
+}
+
+.grid-container2 > div {
+  background-color: rgba(34 , 37, 43, 0.8);
+  text-align: center;
+  padding: 0px 0;
+}
+
+.alignedImage{
+  height: 40%;
+  width: 95%;
+  margin-top: 20%;
+}
+
+.grid-container3 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 0px;
+  background-color: white;
+  padding: 0px;
+}
+
+.grid-container3 > div {
+  background-color: white;
+  text-align: center;
+  padding: 0px 0;
+}
+
+.hh {
+  height: 30px;
+  width: 250px;
+  background-color: white;
+  color:black;
+}
+
+#compartment_id {
+  height: 30px;
+  width: 100%;
+  color: black;
+  font-size: medium;
+}
+
+#gene_id {
+  height: 30px;
+  width: 100%;
+  color: black;
+  font-size: medium;
+}
+
+#post-btn {
+  height: 30px;
+  width: 100%;
+  color: black;
+  font-size: medium;
+}
+
+#log {
+  height: 20px;
+  width: 100%;
+  color: black;
+  font-size: medium;
+}
+
+#info1 {
+  height: 20px;
+  width: 100%;
+  color: black;
+  font-size: medium;
+  overflow:auto;
+}
+
+#info2 {
+  height: 100px;
+  width: 100%;
+  color: black;
+  font-size: medium;
+  overflow:auto;
+}
+
+#piechart {
+  height: 20px;
+  width: 100%;
+  color: black;
+  font-size: medium;
+}
+
+#mypiechart {
+    height: 20%;
+    width: 100%;
+    color: black;
+    font-size: medium;
+    margin-bottom: 10%;
+}
+
+#mypiechart_ {
+  height: 20%;
+  width: 100%;
+  color: black;
+  font-size: medium;
+}
+
+#form {
+  height: 30px;
+  width: 100%;
+  color: black;
+  font-size: medium;
+}
+
+
+/** Hides the outer shapes - for this style we only need one
+svg.a9s-annotationlayer .a9s-selection .a9s-outer, 
+svg.a9s-annotationlayer .a9s-annotation .a9s-outer {
+  display:none;
+}
+
+svg.a9s-annotationlayer .a9s-handle .a9s-handle-outer {
+  display:none;
+}
+
+/** New style for the annotation outlines 
+svg.a9s-annotationlayer .a9s-selection .a9s-inner,
+svg.a9s-annotationlayer .a9s-annotation .a9s-inner  {
+  stroke-width:4;
+  stroke:white;
+  stroke-dasharray:5;
+}
+
+/** New style for the annotation outlines 
+svg.a9s-annotationlayer .a9s-selection .a9s-inner,
+svg.a9s-annotationlayer .a9s-annotation .a9s-inner  {
+  stroke-width:4;
+  stroke:white;
+  stroke-dasharray:5;
+}
+
+/** New style for the annotation outlines
+svg.a9s-annotationlayer .a9s-annotation.c3 {
+  stroke-width:4;
+  stroke:green;
+  stroke-dasharray:5;
+}
+
+/**Corner handles
+svg.a9s-annotationlayer .a9s-handle .a9s-handle-inner {
+  fill:white;
+  stroke:white;
+}
+
+/** Disable the hover effect from the default stylesheet 
+svg.a9s-annotationlayer .a9s-annotation.editable:hover .a9s-inner {
+  fill:transparent;
+}
+
+/** Enable the dim mask, black with 60% transparency 
+svg.a9s-annotationlayer .a9s-selection-mask {
+  fill:rgba(0, 0, 0, 0.6);
+}
+**/
+
+svg.a9s-annotationlayer .a9s-selection .a9s-outer, 
+svg.a9s-annotationlayer .a9s-annotation .a9s-outer {
+  display:none;
+}
+
+svg.a9s-annotationlayer .a9s-handle .a9s-handle-outer {
+  display:none;
+}
+
+svg.a9s-annotationlayer .a9s-selection .a9s-inner,
+svg.a9s-annotationlayer .a9s-annotation .a9s-inner  {
+  stroke-width:1;
+  stroke:rgba(255, 255, 255, 0.9);
+}
+
+svg.a9s-annotationlayer .a9s-selection .a9s-inner,
+svg.a9s-annotationlayer .a9s-annotation.Glomerulus .a9s-inner  {
+  stroke-width:2;
+  stroke:orange;
+}
+
+svg.a9s-annotationlayer .a9s-selection .a9s-inner,
+svg.a9s-annotationlayer .a9s-annotation.Tubules .a9s-inner  {
+  stroke-width:1;
+  stroke:blue;
+}
+
+svg.a9s-annotationlayer .a9s-selection .a9s-outer, 
+svg.a9s-annotationlayer .a9s-annotation.Tubules .a9s-outer {
+  display:3px;
+}
+
+svg.a9s-annotationlayer .a9s-selection .a9s-outer, 
+svg.a9s-annotationlayer .a9s-annotation.Glomerulus .a9s-outer {
+  display:3px;
+}
+
+svg.a9s-annotationlayer .a9s-selection .a9s-outer, 
+svg.a9s-annotationlayer .a9s-annotation.arterioles .a9s-outer {
+  display:3px;
+}
+
+svg.a9s-annotationlayer .a9s-selection .a9s-inner,
+svg.a9s-annotationlayer .a9s-annotation.arterioles .a9s-inner  {
+  stroke-width:1;
+  stroke:green;
+}
