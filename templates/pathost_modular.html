@@ -116,7 +116,7 @@
   <div id="seadragon-viewer" ></div>
   <div id="seadragon-viewer2" ></div>
   <div id="controls" >  
-    <h5>Compartment Analysis</h5>
+    <h5>FTU-Level Analysis</h5>
     <h6>Spatial Transcriptomics Analysis</h6>
     <canvas id="mypiechart"></canvas>
     <h6>Cell Deconvolution</h6>
@@ -155,7 +155,7 @@
 
     geneChart.destroy();
     geneChart = new Chart("mypiechart", {
-      type: "pie",
+      type: 'horizontalBar',
       data: {
       labels: xValues,
       datasets: [{
@@ -188,7 +188,7 @@
   ]
 
   var cellChart = new Chart("mypiechart_", {
-  type: "pie",
+  type: 'horizontalBar',
   data: {
   labels: xValues_,
   datasets: [{
@@ -219,7 +219,7 @@
     cellChart.destroy()
     
     cellChart = new Chart("mypiechart_", {
-      type: "pie",
+      type: 'horizontalBar',
       data: {
       labels: xValues_,
       datasets: [{
@@ -269,7 +269,7 @@
   ]
 
   var geneChart = new Chart("mypiechart", {
-  type: "pie",
+  type: 'horizontalBar',
   data: {
   labels: xValues,
   datasets: [{
