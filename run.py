@@ -3,7 +3,7 @@ from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_sock import Sock
-from chelper.st_controller import getTopGenes, getTopCells, getTopGenesGiven, getTopCellsGiven
+from chelper.st_controller import getTopGenes, getTopCells, getTopGenesGiven, getTopCellsGiven, getGloms, getTubules
 import json
 
 app = Flask(__name__, static_folder='./static')
@@ -25,6 +25,10 @@ def parsePolygon(d):
     print(polygon)
     polygon = [ tuple(map(float, k.split(",")))   for k in polygon]
     return polygon
+
+@app.route("/")
+def hello_world():
+    return render_template('align_patch.html')
 
 @app.route("/")
 def hello_world():
@@ -75,6 +79,19 @@ def get_cell_data_given(ws):
         names.extend(values.tolist())
         ws.send(names)
 
+@sock.route('/get_gloms')
+def get_gloms(ws):
+    while True:
+        data = ws.receive()
+        gloms = getGloms()
+        x = []
+        y = []
+        for g in gloms:
+            x.append(g['x_tsne'])
+            y.append(g['y_tsne'])
+        x.extend(y)
+        ws.send(x)
+
 @sock.route('/get_cell_data')
 def get_cell_data(ws):
     global gene_data
@@ -83,7 +100,6 @@ def get_cell_data(ws):
         names, values = getTopCells(int(data), 10)
         names.extend(values.tolist())
         ws.send(names)
-
 
 @sock.route('/update_compartment')
 def update_compartment(ws):

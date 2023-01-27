@@ -60,6 +60,7 @@
         v1.on('selectAnnotation', function(annotation, element) {
           s_gene.send(annotation['id']);
           s_cell.send(annotation['id']);
+          s_gloms.send('')
         });
 
         v1.on('changeSelectionTarget', function(annotation) {
@@ -108,7 +109,7 @@
     <div>  <h1>PathoST<small style="font-size: 1; color:bisque">analyzer</small></h1>    </div>
     <div>    </div>
     <div>     </div>
-    <div>   iNaglah.com   </div>
+    <div>      </div>
   </div>
 </div>
 
@@ -155,10 +156,15 @@
 
     geneChart.destroy();
     geneChart = new Chart("mypiechart", {
+<<<<<<< HEAD
       type: 'horizontalBar',
+=======
+      type: "horizontalBar",
+>>>>>>> a19bbb1f545c235896f33af831d02ea4048de680
       data: {
       labels: xValues,
       datasets: [{
+        label: "",
         backgroundColor: barColors,
         data: yValues
       }]
@@ -188,10 +194,15 @@
   ]
 
   var cellChart = new Chart("mypiechart_", {
+<<<<<<< HEAD
   type: 'horizontalBar',
+=======
+  type: "horizontalBar",
+>>>>>>> a19bbb1f545c235896f33af831d02ea4048de680
   data: {
   labels: xValues_,
   datasets: [{
+    label: "",
     backgroundColor: barColors_,
     data: yValues_
   }]
@@ -203,6 +214,24 @@
   }
   }
   });
+    
+  glomChart = new Chart("mypiechart__", {
+    type: "scatter",
+    data: {
+    labels: xValues_,
+    datasets: [{
+      label: "",
+      backgroundColor: barColors_,
+      data: yValues_
+    }]
+    },
+    options: {
+    title: {
+      display: true,
+      text: ""
+    }
+    }
+    });
 
   const cell_handler = (a) => { 
     //document.getElementById("info2").innerText = a;
@@ -219,10 +248,15 @@
     cellChart.destroy()
     
     cellChart = new Chart("mypiechart_", {
+<<<<<<< HEAD
       type: 'horizontalBar',
+=======
+      type: "horizontalBar",
+>>>>>>> a19bbb1f545c235896f33af831d02ea4048de680
       data: {
       labels: xValues_,
       datasets: [{
+        label: "",
         backgroundColor: barColors_,
         data: yValues_
       }]
@@ -237,9 +271,46 @@
   
   };
 
+  const glom_handler = (a) => { 
+    //document.getElementById("info2").innerText = a;
+    console.log(a);
+    var a_ = a.replace('[','').replace(']','').replace(' ', '');
+    const a__ = a_.split(',');
+
+    var l  = Math.floor(a__.length /2);
+
+    xValues_ = a__.slice(0, l);
+    yValues_ = a__.slice(l, l*2);
+    console.log('rendering chart');
+    console.log(xValues_);
+    console.log(yValues_);
+
+    glomChart.destroy()
+    
+    glomChart = new Chart("mypiechart__", {
+      type: "scatter",
+      data: {
+      labels: xValues_,
+      datasets: [{
+        label: "",
+        backgroundColor: barColors_,
+        data: yValues_
+      }]
+      },
+      options: {
+      title: {
+        display: true,
+        text: ""
+      }
+      }
+      });
+  
+  };
 
   const s_gene = new WebSocket('ws://' + location.host + '/get_gene_data');
   const s_cell = new WebSocket('ws://' + location.host + '/get_cell_data');
+  const s_gloms = new WebSocket('ws://' + location.host + '/get_gloms');
+
   const s_gene_given = new WebSocket('ws://' + location.host + '/get_gene_data_given');
   const s_cell_given = new WebSocket('ws://' + location.host + '/get_cell_data_given');
 
@@ -251,6 +322,8 @@
   s_cell.addEventListener('message', ev => {cell_handler(ev.data);});
   s_gene_given.addEventListener('message', ev => {gene_handler(ev.data);});
   s_cell_given.addEventListener('message', ev => {cell_handler(ev.data);});
+
+  s_gloms.addEventListener('message', ev => {glom_handler(ev.data);});
 
   var xValues = ["", "", "", "", ""];
   var yValues = [1, 1, 1, 1, 1];
@@ -269,10 +342,15 @@
   ]
 
   var geneChart = new Chart("mypiechart", {
+<<<<<<< HEAD
   type: 'horizontalBar',
+=======
+  type: "horizontalBar",
+>>>>>>> a19bbb1f545c235896f33af831d02ea4048de680
   data: {
   labels: xValues,
   datasets: [{
+    label: "",
     backgroundColor: barColors,
     data: yValues
   }]
@@ -284,8 +362,6 @@
   }
   }
   });
-
-
 
 </script>
 

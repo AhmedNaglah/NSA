@@ -19,11 +19,25 @@ h3 = df_cellType.head()
 with open("./static/anno.json", "r") as f:
     anno = json.load(f)
 
+with open("./static/gloms.json", "r") as f:
+    gloms = json.load(f)
+
+with open("./static/tubules.json", "r") as f:
+    tubules = json.load(f)
+
 def getPolygonJSON(i):
     global anno
     polygon = anno[i]['target']['selector'][0]['value'].replace("<svg><polygon points=' ", "").replace("'></polygon></svg>", "").split(" ")
     polygon = [ tuple(map(int, k.split(",")))   for k in polygon]
     return polygon
+
+def getGloms(i):
+    global gloms
+    return gloms
+
+def getTubules(i):
+    global tubules
+    return tubules
 
 #print(h1)
 #print(h2)
