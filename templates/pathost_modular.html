@@ -35,15 +35,7 @@
         tileSources: 'static/XY01_IU-21-015F.dzi'
         });
     
-        var viewer2 = OpenSeadragon({
-          id: "seadragon-viewer2",
-          showNavigator:  true,
-          prefixUrl: "//openseadragon.github.io/openseadragon/images/",
-          tileSources: 'static/XY01_IU-21-015F.dzi'
-        });
-    
         var v1 = OpenSeadragon.Annotorious(viewer);
-        var v2 = OpenSeadragon.Annotorious(viewer2);
 
         var myformatter = function (annotation) {
           var tagBodies = annotation.bodies.filter(function (body) {
@@ -55,7 +47,6 @@
         v1.formatters = myformatter;
 
         v1.loadAnnotations('static/anno_mix.json');
-        v2.loadAnnotations('static/anno2.json');
 
         v1.on('selectAnnotation', function(annotation, element) {
           s_gene.send(annotation['id']);
@@ -115,7 +106,6 @@
 
 <div class="grid-container">
   <div id="seadragon-viewer" ></div>
-  <div id="seadragon-viewer2" ></div>
   <div id="controls" >  
     <h5>FTU-Level Analysis</h5>
     <h6>Spatial Transcriptomics Analysis</h6>
