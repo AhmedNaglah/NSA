@@ -30,10 +30,6 @@ def parsePolygon(d):
 def hello_world():
     return render_template('align_patch.html')
 
-@app.route("/")
-def hello_world():
-    return render_template('align_patch.html')
-
 @sock.route('/echo')
 def echo(ws):
     while True:
