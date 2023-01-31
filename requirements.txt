@@ -3,3 +3,5 @@ flask-sock
 flask-socketio
 flask-sqlalchemy
 shapely
+pandas
+numpy
