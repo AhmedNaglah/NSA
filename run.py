@@ -29,7 +29,7 @@ def parsePolygon(d):
 
 @app.route("/")
 def hello_world():
-    return render_template('align_patch.html')
+    return render_template('pathost_modular.html')
 
 @sock.route('/echo')
 def echo(ws):
